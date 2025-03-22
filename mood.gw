@@ -1,0 +1,9 @@
+db:sql.open "bpd.db"
+
+get:!/+("="\)'"&"\.[env;"QUERY_STRING";{[x],()}]
+m:sql.esc get "mood"
+a:util.now 0
+
+sql.exe[db;"insert into mood (mood,at) values ('$m',$a)"]
+
+say "Location: /\n"
