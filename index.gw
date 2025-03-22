@@ -14,11 +14,11 @@ fs:{qq`
 / all moods entered in the db
 q:sql.qry[db;"select * from mood"]
 m:{(m;t):x@"mood" "at"
-	  qq`
-			<tr class="mood-entry">
+   qq`
+   <tr class="mood-entry">
        <td>$m</td><td><span class="unixtime">$t</span></td>
-			</tr>
-			`}'q
+   </tr>
+   `}'q
 
 say qq`
 <!DOCTYPE html>
@@ -29,14 +29,14 @@ say qq`
         <link rel="stylesheet" type="text/css" href="/style.css">
     </head>
     <body>
-				    <p>did you go</h1>
-				    $fs
-								<p>today</h1>
-								<hr>
-								<table>
-								    <tr class="mood-entry"><th>mood</th><th>at</th></tr>
-								    $m
-								<table>
-				</body>
-				<script src="/index.js"></script>
+        <p>did you go</h1>
+        $fs
+        <p>today</h1>
+        <hr>
+        <table>
+            <tr class="mood-entry"><th>mood</th><th>at</th></tr>
+            $m
+        <table>
+    </body>
+    <script src="/index.js"></script>
 </html>`
